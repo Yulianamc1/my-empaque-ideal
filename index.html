@@ -2348,6 +2348,63 @@
   .vip-final-icon svg { width:29px; height:29px; }
 }
 </style>
+
+<style id="experience-upgrades-v36">
+  .customer-progress-panel {
+    padding: clamp(20px, 4vw, 34px);
+    border-radius: 30px 30px 12px 30px;
+    background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,245,252,.96));
+    border: 1px solid rgba(141,99,168,.16);
+    box-shadow: 0 20px 48px rgba(17,8,26,.16);
+  }
+  .customer-progress-head { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:20px; align-items:start; }
+  .customer-progress-head h2 { margin:12px 0 10px; font-family:Georgia,serif; font-size:clamp(1.8rem,4vw,3rem); line-height:1.06; }
+  .customer-progress-head p { color:var(--muted); line-height:1.65; max-width:75ch; margin:0; }
+  .progress-counter { min-width:145px; padding:14px; text-align:center; border-radius:20px 20px 9px 20px; background:var(--lavender-soft); border:1px solid rgba(141,99,168,.18); }
+  .progress-counter strong { display:block; color:var(--lavender-dark); font-size:1.35rem; }
+  .progress-counter span { color:var(--muted); font-size:.74rem; }
+  .customer-progress-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; margin-top:22px; }
+  .progress-check { display:flex; gap:12px; align-items:flex-start; padding:15px; border-radius:18px 18px 8px 18px; background:rgba(255,255,255,.78); border:1px solid rgba(141,99,168,.14); cursor:pointer; }
+  .progress-check input { width:22px; height:22px; margin:1px 0 0; accent-color:var(--lavender-dark); flex:0 0 auto; }
+  .progress-check strong { display:block; margin-bottom:4px; color:var(--ink); font-size:.9rem; }
+  .progress-check small { display:block; color:var(--muted); line-height:1.45; }
+  .progress-check:has(input:checked) { background:linear-gradient(135deg,#edf8f2,#f6effa); border-color:rgba(56,120,93,.28); }
+  .progress-complete { margin-top:14px; padding:14px 16px; border-radius:16px; background:#e7f4ed; border:1px solid rgba(56,120,93,.22); color:#275f48; line-height:1.5; }
+
+  .favorites-guide { display:flex; justify-content:space-between; align-items:center; gap:16px; margin:-5px 0 16px; padding:14px 16px; border-radius:20px 20px 9px 20px; background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(248,240,252,.96)); border:1px solid rgba(141,99,168,.16); box-shadow:0 12px 28px rgba(25,12,35,.10); }
+  .favorites-guide > div { display:flex; gap:12px; align-items:center; }
+  .favorites-heart { display:grid; place-items:center; width:44px; height:44px; border-radius:15px; background:#fbeaf0; color:#b5496e; font-size:1.35rem; }
+  .favorites-guide strong, .favorites-guide small { display:block; }
+  .favorites-guide small { color:var(--muted); margin-top:3px; line-height:1.4; }
+  .not-fit-btn { grid-column:1/-1; border:0; background:transparent; color:var(--lavender-dark); padding:8px 4px 2px; cursor:pointer; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
+  .help-whatsapp { width:100%; margin-top:16px; }
+  .help-whatsapp-note { margin:9px 0 0 !important; font-size:.78rem !important; }
+  .vip-mobile-expand { display:none; }
+
+  @media (max-width:720px) {
+    .customer-progress-head { grid-template-columns:1fr; }
+    .progress-counter { min-width:0; width:100%; }
+    .customer-progress-list { grid-template-columns:1fr; }
+    .favorites-guide { flex-direction:column; align-items:stretch; }
+    .favorites-guide .btn { width:100%; }
+    .vip-mobile-expand { display:flex; width:100%; margin:16px 0 0; background:linear-gradient(135deg,#f7df92,#d9a63c); color:#25140b; box-shadow:0 14px 28px rgba(199,148,53,.24); }
+    #plataforma-vip:not(.vip-expanded) .vip-final-benefits,
+    #plataforma-vip:not(.vip-expanded) .vip-launch-card,
+    #plataforma-vip:not(.vip-expanded) .vip-final-actions,
+    #plataforma-vip:not(.vip-expanded) .vip-conversion-callout,
+    #plataforma-vip:not(.vip-expanded) .vip-final-note,
+    #plataforma-vip:not(.vip-expanded) .vip-final-visual { display:none !important; }
+    #plataforma-vip:not(.vip-expanded) .vip-final-grid { display:block; }
+    #plataforma-vip:not(.vip-expanded) .vip-final-lead { margin-bottom:0; }
+  }
+
+  @media (max-width:640px) {
+    .sticky-inner { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+    .smart-sticky-actions { padding:8px; border-radius:18px; }
+    .smart-action { min-height:44px; padding:9px 8px; font-size:.84rem; border-radius:13px; }
+    main { padding-bottom:132px !important; }
+  }
+</style>
 </head>
 <body>
 <div aria-hidden="true" class="vip-page-theme">
@@ -2454,21 +2511,21 @@
 </div>
 </div>
 <div aria-label="Accesos principales del material interactivo" class="quick-entry-grid">
-<a class="quick-card quick-card-canva js-config-link" data-config-key="canvaResourcesUrl" href="https://drive.google.com/drive/folders/10MsDmdJv3-W1L8S3oa8qb85RC4P69oTc?usp=sharing" rel="noopener noreferrer" target="_blank">
+<a class="quick-card quick-card-canva" href="#catalogo">
 <span class="quick-icon">🎨</span>
 <div class="quick-card-copy">
 <small>Opción 1</small>
-<strong>Abrir versión editable en Canva</strong>
-<span>Personaliza textos, colores, tipografías, imágenes y logotipo.</span>
+<strong>Explorar los modelos editables</strong>
+<span>Compara las cajitas disponibles y abre directamente en Canva la que quieras personalizar.</span>
 </div>
-<span class="quick-arrow">↗</span>
+<span class="quick-arrow">→</span>
 </a>
 <a class="quick-card quick-card-pdf js-config-link" data-config-key="pdfFolderUrl" href="https://drive.google.com/file/d/1Mpy8j55o-eBE8ze7AZsnA2u-N0WyWcGB/view?usp=sharing" rel="noopener noreferrer" target="_blank">
 <span class="quick-icon">📄</span>
 <div class="quick-card-copy">
 <small>Opción 2</small>
-<strong>Abrir PDF listo para imprimir</strong>
-<span>Encuentra tus archivos de forma directa para descargar e imprimir.</span>
+<strong>Descargar paquete de PDF</strong>
+<span>Se abrirá un archivo ZIP con todas tus plantillas listas para descargar, descomprimir e imprimir.</span>
 </div>
 <span class="quick-arrow">↗</span>
 </a>
@@ -2500,7 +2557,7 @@
 <article class="helper-box">
 <span class="helper-label">PDF</span>
 <strong>Ideal si deseas imprimir</strong>
-<p>Abre el archivo con las medidas ya listas, descarga, imprime y arma.</p>
+<p>Descarga el archivo ZIP, descomprímelo y encontrarás los PDF con las medidas listas para imprimir y armar.</p>
 </article>
 <article class="helper-box">
 <span class="helper-label">Ayuda visual</span>
@@ -2508,6 +2565,29 @@
 <p>Encontrarás ejemplos de referencia, instrucciones y una ruta clara para avanzar.</p>
 </article>
 </div>
+</div>
+</div>
+</section>
+
+<section class="section-tight customer-progress-section" id="mi-avance">
+<div class="shell">
+<div class="customer-progress-panel">
+<div class="customer-progress-head">
+<div>
+<span class="eyebrow">Mi avance</span>
+<h2>Marca cada paso conforme prepares tu material.</h2>
+<p>Tu avance se guarda automáticamente en este dispositivo. <strong>Si elegiste Canva, debes crear y verificar una copia en tu propia cuenta para conservar la plantilla permanentemente.</strong></p>
+</div>
+<div class="progress-counter" aria-live="polite"><strong id="customerProgressCount">0/5</strong><span>pasos completados</span></div>
+</div>
+<div class="customer-progress-list" id="customerProgressList">
+<label class="progress-check"><input type="checkbox" data-progress-task="modelo"><span><strong>Ya elegí el modelo que necesito</strong><small>Comparé las opciones y ubiqué mi plantilla.</small></span></label>
+<label class="progress-check"><input type="checkbox" data-progress-task="copia-canva"><span><strong>Si elegí Canva, ya hice y verifiqué mi copia</strong><small>La copia aparece en Proyectos o Diseños de mi propia cuenta; así la conservaré permanentemente.</small></span></label>
+<label class="progress-check"><input type="checkbox" data-progress-task="pdf"><span><strong>Si elegí PDF, ya descargué y descomprimí el ZIP</strong><small>Guardé los archivos en mi dispositivo o en mi Drive.</small></span></label>
+<label class="progress-check"><input type="checkbox" data-progress-task="instrucciones"><span><strong>Ya revisé las instrucciones y videos</strong><small>Identifiqué cómo editar, imprimir, recortar y armar.</small></span></label>
+<label class="progress-check"><input type="checkbox" data-progress-task="bonos"><span><strong>Ya guardé mis bonos y recursos adicionales</strong><small>Revisé los materiales incluidos para aprovechar mejor mi compra.</small></span></label>
+</div>
+<div class="progress-complete" id="customerProgressComplete" hidden>🎉 <strong>¡Todo listo!</strong> Ya guardaste lo necesario para comenzar a personalizar, imprimir y armar.</div>
 </div>
 </div>
 </section>
@@ -2627,7 +2707,7 @@
 <div class="result-intro"><h3 id="resultTitle">Estas son tus mejores opciones visuales</h3><p id="resultSummary">Seleccionamos modelos compatibles con lo que nos indicaste y te los mostramos con imágenes de referencia para que te sea más fácil elegir.</p><div aria-label="Resumen de tu selección" class="selected-summary" id="selectedSummary"></div></div>
 <div class="result-grid" id="recommendationGrid"></div>
 <div class="result-control-row">
-<button class="btn btn-gold" id="showMoreRecommendations" type="button">Ver otras 3 opciones ✦</button>
+<button class="btn btn-gold" id="showMoreRecommendations" type="button">Este no es el que buscaba: ver otras opciones ✦</button>
 <button class="btn btn-secondary" id="restartWizard" type="button">Hacer otra búsqueda</button>
 <a class="btn btn-primary" href="#catalogo">Comparar todos los modelos</a>
 </div>
@@ -2650,14 +2730,15 @@
 </section>
 <section class="section" id="catalogo">
 <div class="shell">
-<div class="section-heading"><span class="eyebrow">Biblioteca visual</span><h2>Explora los modelos disponibles.</h2><p>Ahora cada modelo se muestra con imágenes de referencia, una guía clara para ubicarlo dentro de tu material y una explicación sencilla para que la clienta entienda rápido qué le conviene.</p></div>
+<div class="section-heading"><span class="eyebrow">Biblioteca visual</span><h2>Explora los modelos disponibles.</h2><p>Ahora cada modelo se muestra con imágenes de referencia, una guía clara para ubicarlo dentro de tu material y una explicación sencilla para que encuentres rápido qué te conviene.</p></div>
+<div class="favorites-guide"><div><span class="favorites-heart">♥</span><span><strong>Guarda los modelos que más te gusten.</strong><small>Toca el corazón de cada cajita y después podrás ver únicamente tus favoritos.</small></span></div><button class="btn btn-secondary btn-sm" id="favoriteQuickButton" type="button">Ver mis favoritos (<span id="favoriteCount">0</span>)</button></div>
 <div class="catalog-toolbar">
 <input aria-label="Buscar modelos" id="searchInput" placeholder="Buscar: visor, manija, muestra..." type="search"/>
 <select aria-label="Filtrar por presentación" id="presentationFilter"><option value="all">Todas las presentaciones</option><option value="visor">Con visor</option><option value="manija">Con manija</option><option value="muestra">Para muestra</option><option value="premium">Premium</option><option value="economica">Sencilla</option></select>
 <select aria-label="Filtrar favoritos" id="favoriteFilter"><option value="all">Todos</option><option value="favorites">Mis favoritos</option></select>
 </div>
 <div class="catalog-universal-note"><strong>Uso versátil:</strong> los modelos no están limitados a una sola categoría. Puedes adaptarlos para jabones, velas, veladoras, shampoos pequeños, muestras pequeñas y otros productos artesanales, siempre verificando que las medidas sean adecuadas.</div>
-<div class="catalog-grid" id="catalogGrid"></div><div class="catalog-note" style="margin-top:14px"><strong>Antes de editar:</strong> abre Canva preferentemente desde una computadora, realiza una copia en tu propia cuenta y guárdala durante el periodo de acceso. Así podrás conservarla en tus archivos aunque el enlace deje de estar disponible.</div>
+<div class="catalog-grid" id="catalogGrid"></div><div class="catalog-note" style="margin-top:14px"><strong>Antes de editar:</strong> abre Canva, realiza una copia en tu propia cuenta y confirma que aparezca en Proyectos o Diseños. Esa copia permanecerá en tu cuenta aunque el enlace original deje de estar disponible.</div>
 </div>
 </section>
 <section class="section">
@@ -2669,7 +2750,8 @@
 <span class="vip-final-badge">Plataforma VIP</span>
 </div>
 <h2>Convierte tus ideas en ventas con un sistema <em>más completo.</em></h2>
-<p class="vip-final-lead">Si esta mini herramienta te ayudó a encontrar el empaque ideal, la <strong>Plataforma VIP</strong> te acompaña para dar el siguiente paso: promocionar mejor tus productos, responder a tus clientes, crear contenido, definir precios y tomar decisiones con más claridad, aunque todavía estés comenzando.</p>
+<p class="vip-final-lead">No necesitas saber de tecnología, diseño ni ventas. La <strong>Plataforma VIP</strong> reúne en un solo lugar lo necesario para llevar una venta de principio a fin: crear imágenes y mensajes, responder clientes, calcular costos y precios, preparar promociones, aprender con cursos sencillos, utilizar herramientas y asistentes, recibir regalos y trabajar con mayor independencia sin pagarle a alguien por cada tarea.</p>
+<button class="btn vip-mobile-expand" id="vipExpandButton" type="button" aria-expanded="false">Ver todo lo que incluye ↓</button>
 <div aria-label="Beneficios de la Plataforma VIP" class="vip-final-benefits">
 <div class="vip-final-benefit"><span class="vip-final-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H7l-4 2 1.35-4.05A8 8 0 1 1 21 12Z"></path><path d="M8 12h.01M12 12h.01M16 12h.01"></path></svg></span><div><strong>Mensajes para clientes</strong><span>Apoyo para responder, dar seguimiento y avanzar hasta cerrar la venta.</span></div></div>
 <div class="vip-final-benefit"><span class="vip-final-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="4"></rect><circle cx="9" cy="9" r="2"></circle><path d="m5 18 4.5-4.5 3 3 2.5-2.5 4 4"></path></svg></span><div><strong>Publicidad para productos</strong><span>Ideas y apoyo visual para presentar lo que vendes de forma más atractiva.</span></div></div>
@@ -2705,8 +2787,8 @@
 <div aria-label="Beneficio principal de la Plataforma VIP" class="vip-conversion-callout">
 <span aria-hidden="true" class="vip-conversion-icon">✦</span>
 <div>
-<strong>Deja de depender de pagar por cada diseño, texto o promoción.</strong>
-<span>Hazlo tú misma, a tu gusto y desde un solo lugar. No necesitas saber diseño, ventas ni tecnología: la Plataforma VIP te guía paso a paso para crear, promocionar y vender con mayor independencia.</span>
+<strong>Todo lo necesario para preparar tu venta de principio a fin.</strong>
+<span>Crea imágenes, mensajes y promociones; calcula costos y precios; aprende con cursos paso a paso; utiliza asistentes y herramientas; recibe recursos y regalos, y organiza mejor tu negocio sin depender de pagar por cada diseño o tarea.</span>
 </div>
 </div>
 </div>
@@ -2721,8 +2803,8 @@
 <div class="access-copy-header">
 <div>
 <span class="eyebrow access-eyebrow">Guarda tu material</span>
-<h2>Haz tus copias dentro de los 30 días y conserva tus plantillas permanentemente.</h2>
-<p>Tu acceso a esta aplicación estará disponible durante <strong>30 días naturales a partir de la entrega</strong>. Durante ese tiempo puedes entrar, revisar los modelos y abrir tus plantillas. Para conservarlas en tu cuenta de Canva después de que termine el acceso, debes crear y verificar tu propia copia.</p>
+<h2>Crea tu copia en Canva y conserva tus plantillas permanentemente.</h2>
+<p>Los enlaces originales tienen acceso temporal. Para conservar cada plantilla de Canva, crea una copia en tu propia cuenta y confirma que aparezca dentro de <strong>Proyectos</strong> o <strong>Diseños</strong>. El plazo completo y las condiciones se encuentran en el aviso importante al final de esta sección.</p>
 </div>
 <div aria-label="30 días de acceso" class="access-days">
 <strong>30</strong>
@@ -2753,7 +2835,7 @@
 </div>
 <div class="copy-reminders">
 <div class="copy-reminder important"><strong>Importante</strong><span>No edites el enlace original sin antes crear tu copia. Haz este proceso con cada modelo que quieras conservar.</span></div>
-<div class="copy-reminder"><strong>Si elegiste PDF</strong><span>Descárgalo y guárdalo en tu dispositivo o en Drive antes de que terminen los 30 días. El PDF incluye las medidas preestablecidas y está listo para imprimir.</span></div>
+<div class="copy-reminder"><strong>Si elegiste PDF</strong><span>Descarga el archivo ZIP, descomprímelo y guarda los PDF en tu dispositivo o en Drive. Las medidas ya vienen preestablecidas y listas para imprimir.</span></div>
 <div class="copy-reminder"><strong>Recomendación</strong><span>Realiza las copias desde una computadora cuando sea posible. En celular también funciona, pero algunos botones pueden aparecer dentro del menú <b>⋯</b>.</span></div>
 </div>
 </div>
@@ -2788,6 +2870,8 @@
 <li><b>3.</b><span>Cambia textos, logo, colores o diseños sin mover las líneas importantes.</span></li>
 <li><b>4.</b><span>Descarga, imprime, recorta, dobla y arma siguiendo el ejemplo.</span></li>
 </ul>
+<a class="btn btn-primary help-whatsapp js-config-link" data-config-key="supportUrl" href="https://wa.me/523314708786?text=Hola%2C%20necesito%20ayuda%20con%20mi%20material%20interactivo%20de%20cajitas%20y%20etiquetas.%20Estoy%20en%20la%20secci%C3%B3n%20de%20____." target="_blank" rel="noopener noreferrer">💬 Necesito ayuda por WhatsApp</a>
+<p class="help-whatsapp-note">Al abrir WhatsApp, completa el espacio con la sección donde necesitas apoyo: Canva, descarga del ZIP, impresión, armado o bonos.</p>
 </div>
 <div class="help-card">
 <details open=""><summary>¿Qué hago si tengo Canva Gratis?</summary><p>Puedes utilizar la base editable en blanco y cambiar los elementos marcados como Pro por elementos gratuitos. El material incluye un video donde se explica este proceso.</p></details>
@@ -2822,7 +2906,7 @@
       pdfFolderUrl: "https://drive.google.com/file/d/1Mpy8j55o-eBE8ze7AZsnA2u-N0WyWcGB/view?usp=sharing",
       pdfBonusesUrl: "https://drive.google.com/drive/folders/1Ly4K0wiZLwwWEs_SXPIAORpcV8RviSD6?usp=sharing",
       canvaResourcesUrl: "https://drive.google.com/drive/folders/10MsDmdJv3-W1L8S3oa8qb85RC4P69oTc?usp=sharing",
-      supportUrl: "",
+      supportUrl: "https://wa.me/523314708786?text=Hola%2C%20necesito%20ayuda%20con%20mi%20material%20interactivo%20de%20cajitas%20y%20etiquetas.%20Estoy%20en%20la%20secci%C3%B3n%20de%20____.",
       demoMode: false
     };
 
@@ -3495,7 +3579,7 @@
         ? `<div class="format-recommendation"><strong>${formatInfo.badge}</strong><span>${formatInfo.text}</span></div>`
         : "";
       return `<article class="model-card" data-model-id="${model.id}">
-        <button class="model-art model-art-button" type="button" data-open-id="${model.id}" style="--model-a:${model.a};--model-b:${model.b}" aria-label="Ver detalles y editar ${model.name}"><img class="model-photo" src="${model.image}" alt="${model.name}" loading="lazy" decoding="async" width="455" height="190" /><span class="model-tap-label">Ver detalles y editar</span></button>
+        <button class="model-art model-art-button" type="button" data-open-id="${model.id}" style="--model-a:${model.a};--model-b:${model.b}" aria-label="Ver medidas y detalles de ${model.name}"><img class="model-photo" src="${model.image}" alt="${model.name}" loading="lazy" decoding="async" width="455" height="190" /><span class="model-tap-label">Ver medidas y detalles</span></button>
         <div class="model-body">
           <div class="model-topline"><h3>${model.name}</h3></div>
           <p>${model.use}</p>
@@ -3504,10 +3588,11 @@
           <div class="model-reference"><strong>Ubícalo en tu material como:</strong><br>${model.referenceName}</div>
           ${formatMarkup}
           <div class="model-actions ${context === "recommendation" ? "recommendation-actions" : ""}">
-            ${context === "recommendation" && state.answers.canva !== "pdf" ? `<a class="btn btn-primary btn-sm quick-canva-link" href="${model.canvaUrl}" target="_blank" rel="noopener noreferrer" aria-label="Abrir ${model.name} en Canva">Abrir en Canva →</a>` : ""}
-            ${context === "recommendation" && state.answers.canva === "pdf" ? `<a class="btn btn-primary btn-sm" href="${APP_CONFIG.pdfFolderUrl}" target="_blank" rel="noopener noreferrer">Abrir PDF</a>` : ""}
-            <button class="btn btn-secondary btn-sm detail-btn" type="button" data-id="${model.id}">Ver detalles y editar</button>
+            ${context === "recommendation" && state.answers.canva !== "pdf" ? `<a class="btn btn-primary btn-sm quick-canva-link" href="${model.canvaUrl}" target="_blank" rel="noopener noreferrer" aria-label="Abrir ${model.name} en Canva">Abrir y crear mi copia →</a>` : ""}
+            ${context === "recommendation" && state.answers.canva === "pdf" ? `<a class="btn btn-primary btn-sm" href="${APP_CONFIG.pdfFolderUrl}" target="_blank" rel="noopener noreferrer">Descargar paquete ZIP</a>` : ""}
+            <button class="btn btn-secondary btn-sm detail-btn" type="button" data-id="${model.id}">Ver medidas y detalles</button>
             <button class="heart ${favorite?'active':''}" type="button" data-favorite="${model.id}" aria-label="${favorite?'Quitar de':'Agregar a'} favoritos">${favorite?'♥':'♡'}</button>
+            ${context === "recommendation" ? `<button class="not-fit-btn" type="button" data-not-fit="1">Este no es el que buscaba</button>` : ""}
           </div>
         </div>
       </article>`;
@@ -3526,12 +3611,22 @@
       });
       $("#catalogGrid").innerHTML = filtered.length ? filtered.map(modelCard).join("") : `<div class="empty-state"><strong>No encontramos coincidencias.</strong><br>Prueba con otro filtro o realiza el selector guiado.</div>`;
       bindCardActions($("#catalogGrid"));
+      updateFavoritesUi();
+    }
+
+    function updateFavoritesUi() {
+      const count = state.favorites.size;
+      const countEl = $("#favoriteCount");
+      const button = $("#favoriteQuickButton");
+      if (countEl) countEl.textContent = String(count);
+      if (button) button.disabled = count === 0;
     }
 
     function bindCardActions(root) {
       $$(".detail-btn", root).forEach(btn => btn.addEventListener("click", () => openModel(btn.dataset.id)));
       $$("[data-open-id]", root).forEach(btn => btn.addEventListener("click", () => openModel(btn.dataset.openId)));
       $$("[data-favorite]", root).forEach(btn => btn.addEventListener("click", () => toggleFavorite(btn.dataset.favorite)));
+      $$("[data-not-fit]", root).forEach(btn => btn.addEventListener("click", showOtherRecommendations));
     }
 
     function toggleFavorite(id) {
@@ -3548,9 +3643,9 @@
       const selectedFormat = state.answers.canva || "gratis";
       const isPdf = selectedFormat === "pdf";
       const formatLabel = ({gratis:"Canva Gratis",pro:"Canva Pro",educacion:"Canva Educación",pdf:"PDF listo para imprimir"})[selectedFormat] || "Canva";
-      const primaryLabel = isPdf ? "Abrir material listo para imprimir" : "Abrir plantilla en Canva";
+      const primaryLabel = isPdf ? "Descargar paquete ZIP de PDF" : "Abrir y crear mi copia en Canva";
       const primaryHref = isPdf ? APP_CONFIG.pdfFolderUrl : model.canvaUrl;
-      const secondaryLabel = isPdf ? "Bonos de regalo e instructivo" : "Instrucciones, video y bonos";
+      const secondaryLabel = isPdf ? "Ver instructivo y bonos para PDF" : "Ver instrucciones, video y bonos";
       const secondaryHref = isPdf ? APP_CONFIG.pdfBonusesUrl : APP_CONFIG.canvaResourcesUrl;
 
       $("#modalTitle").textContent = model.name;
@@ -3570,7 +3665,7 @@
       </div>
       <div class="simple-steps">
         <div class="simple-step"><strong>1. Ubica el modelo</strong><span>Compáralo con la imagen de referencia y confirma que sea el que necesitas.</span></div>
-        <div class="simple-step"><strong>2. Guarda tu acceso</strong><span>${isPdf ? "Descarga el archivo durante tu periodo de acceso." : "Haz una copia en tu cuenta personal de Canva antes de editar."}</span></div>
+        <div class="simple-step"><strong>2. Guarda tu acceso</strong><span>${isPdf ? "Descarga el ZIP, descomprímelo y guarda los PDF." : "Crea una copia en tu cuenta personal de Canva y verifica que aparezca en Proyectos antes de editar."}</span></div>
         <div class="simple-step"><strong>3. Personaliza o imprime</strong><span>${isPdf ? "Imprime con las medidas preestablecidas." : "Cambia textos, colores, imágenes y logotipo."}</span></div>
         <div class="simple-step"><strong>4. Recorta y arma</strong><span>Sigue el instructivo incluido y revisa los bonos disponibles.</span></div>
       </div>
@@ -3619,8 +3714,8 @@
         pdf: {
           icon: "📄",
           title: "Accesos para PDF listo para imprimir",
-          text: "Las medidas ya vienen preestablecidas. Descarga el material, imprime, recorta y arma.",
-          note: "El primer botón abre el material. El segundo abre el instructivo y los bonos incluidos para PDF."
+          text: "Las medidas ya vienen preestablecidas. Descarga el archivo ZIP, descomprímelo, imprime los PDF, recorta y arma.",
+          note: "El primer botón abre en Google Drive el archivo ZIP con todos los PDF. Descárgalo y descomprímelo; el segundo botón abre el instructivo y los bonos."
         }
       };
 
@@ -3633,7 +3728,7 @@
 
       if (format === "pdf") {
         actions.innerHTML = `
-          <a class="btn btn-primary" href="${APP_CONFIG.pdfFolderUrl}" target="_blank" rel="noopener noreferrer">Material listo para imprimir →</a>
+          <a class="btn btn-primary" href="${APP_CONFIG.pdfFolderUrl}" target="_blank" rel="noopener noreferrer">Descargar paquete ZIP de PDF →</a>
           <a class="btn btn-secondary" href="${APP_CONFIG.pdfBonusesUrl}" target="_blank" rel="noopener noreferrer">Bonos de regalo e instructivo</a>`;
       } else {
         actions.innerHTML = `
@@ -3825,13 +3920,22 @@
       $("#resultsArea").scrollIntoView({ behavior:"smooth", block:"start" });
     }
 
-    $("#showMoreRecommendations").addEventListener("click", () => {
+    function showOtherRecommendations() {
       state.recommendationOffset = (state.recommendationOffset + 3) % models.length;
       renderRecommendations();
-      showToast("Te mostramos otras opciones que también pueden adaptarse.");
-    });
+      showToast("Te mostramos otras opciones sin borrar tus respuestas.");
+    }
+
+    $("#showMoreRecommendations").addEventListener("click", showOtherRecommendations);
 
     ["searchInput","presentationFilter","favoriteFilter"].forEach(id => $("#"+id).addEventListener(id === "searchInput" ? "input" : "change", renderCatalog));
+    const favoriteQuickButton = $("#favoriteQuickButton");
+    if (favoriteQuickButton) favoriteQuickButton.addEventListener("click", () => {
+      $("#favoriteFilter").value = "favorites";
+      renderCatalog();
+      $("#catalogGrid").scrollIntoView({behavior:"smooth", block:"start"});
+      showToast("Mostrando únicamente tus modelos favoritos.");
+    });
 
     $("#closeModal").addEventListener("click", closeModal);
     $("#modalBack").addEventListener("click", closeModal);
@@ -3914,13 +4018,54 @@
     document.addEventListener("click", event => {
       const externalLink = event.target.closest('a[target="_blank"]');
       if (!externalLink) return;
-      const href = externalLink.getAttribute("href");
+      const href = externalLink.getAttribute("href") || "";
       if (!href || href === "#") {
         event.preventDefault();
         showToast("Este enlace todavía no está disponible.");
         return;
       }
-      showToast("Abriendo el enlace en una nueva pestaña…");
+      if (href.includes("canva.link") || href.includes("canva.com")) {
+        showToast("Canva se abrirá en otra pestaña. Crea una copia en tu cuenta y verifica que aparezca en Proyectos para conservarla permanentemente.");
+      } else if (href === APP_CONFIG.pdfFolderUrl || href.includes("1Mpy8j55o-eBE8ze7AZsnA2u-N0WyWcGB")) {
+        showToast("Google Drive abrirá el archivo ZIP. Descárgalo, descomprímelo y guarda los PDF en tu dispositivo o Drive.");
+      } else if (href === APP_CONFIG.pdfBonusesUrl || href.includes("1Ly4K0wiZLwwWEs_SXPIAORpcV8RviSD6")) {
+        showToast("Tus bonos se abrirán en otra pestaña. Descarga o guarda los archivos que quieras conservar.");
+      } else if (href === APP_CONFIG.canvaResourcesUrl || href.includes("10MsDmdJv3-W1L8S3oa8qb85RC4P69oTc")) {
+        showToast("Las instrucciones, videos y recursos se abrirán en otra pestaña; esta guía permanecerá abierta.");
+      } else if (href.includes("wa.me")) {
+        showToast("WhatsApp se abrirá con un mensaje de ayuda. Completa la sección donde necesitas apoyo.");
+      } else {
+        showToast("El contenido se abrirá en otra pestaña; esta guía permanecerá abierta.");
+      }
+    });
+
+    const progressStorageKey = "my-empaque-customer-progress";
+    let savedProgress = {};
+    try { savedProgress = JSON.parse(safeStorage.getItem(progressStorageKey) || "{}"); } catch (error) { savedProgress = {}; }
+    const progressChecks = $$('[data-progress-task]');
+    function updateCustomerProgress() {
+      const completed = progressChecks.filter(check => check.checked).length;
+      const countEl = $("#customerProgressCount");
+      const completeEl = $("#customerProgressComplete");
+      if (countEl) countEl.textContent = `${completed}/${progressChecks.length}`;
+      if (completeEl) completeEl.hidden = completed !== progressChecks.length;
+      const current = {};
+      progressChecks.forEach(check => { current[check.dataset.progressTask] = check.checked; });
+      safeStorage.setItem(progressStorageKey, JSON.stringify(current));
+    }
+    progressChecks.forEach(check => {
+      check.checked = !!savedProgress[check.dataset.progressTask];
+      check.addEventListener("change", updateCustomerProgress);
+    });
+    updateCustomerProgress();
+
+    const vipExpandButton = $("#vipExpandButton");
+    const vipSection = $("#plataforma-vip");
+    if (vipExpandButton && vipSection) vipExpandButton.addEventListener("click", () => {
+      const expanded = vipSection.classList.toggle("vip-expanded");
+      vipExpandButton.setAttribute("aria-expanded", String(expanded));
+      vipExpandButton.textContent = expanded ? "Ocultar detalles ↑" : "Ver todo lo que incluye ↓";
+      if (expanded) showToast("Ahora puedes revisar todos los beneficios de la Plataforma VIP.");
     });
 
     renderCatalog();
@@ -5006,10 +5151,10 @@
 
 <div aria-label="Accesos rápidos permanentes" class="smart-sticky-actions">
   <div class="sticky-inner">
-    <a class="smart-action primary js-config-link" data-config-key="canvaResourcesUrl" href="https://drive.google.com/drive/folders/10MsDmdJv3-W1L8S3oa8qb85RC4P69oTc?usp=sharing" rel="noopener noreferrer" target="_blank">🎨 Canva</a>
-    <a class="smart-action js-config-link" data-config-key="pdfFolderUrl" href="https://drive.google.com/file/d/1Mpy8j55o-eBE8ze7AZsnA2u-N0WyWcGB/view?usp=sharing" rel="noopener noreferrer" target="_blank">📄 PDF</a>
+    <a class="smart-action primary" href="#catalogo">🎨 Modelos</a>
+    <a class="smart-action js-config-link" data-config-key="pdfFolderUrl" href="https://drive.google.com/file/d/1Mpy8j55o-eBE8ze7AZsnA2u-N0WyWcGB/view?usp=sharing" rel="noopener noreferrer" target="_blank">📄 PDF ZIP</a>
     <a class="smart-action js-config-link" data-config-key="pdfBonusesUrl" href="https://drive.google.com/drive/folders/1Ly4K0wiZLwwWEs_SXPIAORpcV8RviSD6?usp=sharing" rel="noopener noreferrer" target="_blank">🎁 Bonos</a>
-    <a class="smart-action" href="#selector">✨ Elegir modelo</a>
+    <a class="smart-action js-config-link" data-config-key="supportUrl" href="https://wa.me/523314708786?text=Hola%2C%20necesito%20ayuda%20con%20mi%20material%20interactivo%20de%20cajitas%20y%20etiquetas.%20Estoy%20en%20la%20secci%C3%B3n%20de%20____." rel="noopener noreferrer" target="_blank">💬 Ayuda</a>
   </div>
 </div>
 
